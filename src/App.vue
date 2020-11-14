@@ -17,6 +17,7 @@ export default {
 
       axios.get('http://localhost:8019/member/detail/lshs19').then(res => {
         console.log(res)
+        console.log('dddddddd')
       })
     }
   }
