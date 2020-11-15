@@ -2,10 +2,10 @@
   <div>
     <table class="center">
       <colgroup>
-        <col width="20%"></col>
+        <col width="15%"></col>
         <col width="35%"></col>
         <col width="35%"></col>
-        <col width="10%"></col>
+        <col width="15%"></col>
       </colgroup>
       <td>
         <el-input
@@ -31,6 +31,7 @@
       </td>
       <td>
         <el-button @click="act">{{isUpdate ? '수정' : '등록'}}</el-button>
+        <el-button @click="close">취소</el-button>
       </td>
     </table>
   </div>
@@ -73,6 +74,9 @@ export default {
         this.code = ''
         this.parentCode = this.department.parent.code
       }
+    },
+    close () {
+      this.$emit('close')
     },
     init () {
       this.name = ''

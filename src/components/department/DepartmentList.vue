@@ -38,7 +38,7 @@
 
     <DepartmentInput v-if="isShow"
                      :isUpdate="isUpdate" :department="department"
-                     @insertDepartment="insertDepartment" @updateDepartment="updateDepartment"
+                     @insertDepartment="insertDepartment" @updateDepartment="updateDepartment" @close="close"
                      ref="departmentInput"/>
   </div>
 </template>
@@ -119,6 +119,9 @@ export default {
         alert(res.data.message)
         this.listData()
       }
+    },
+    close () {
+      this.isShow = false
     }
   }
 }
