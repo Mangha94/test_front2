@@ -49,7 +49,7 @@ export default {
       this.name = this.businessValue.name
     },
     act () {
-      if (this.businessValue === null) {
+      if (!this.isUpdate) {
         this.$emit('insertValue', this.seq, this.name)
       } else {
         this.$emit('updateValue', this.businessValue.id, this.seq, this.name)
@@ -59,7 +59,6 @@ export default {
     init () {
       this.seq = ''
       this.name = ''
-      this.businessValue = null
       this.isUpdate = false
     }
   }
